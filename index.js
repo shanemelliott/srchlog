@@ -66,7 +66,7 @@ app.get('/search', (request, response) => {
         .then(function(res){
             var result={}
             result.vistaapi=res
-            searchFull(filename2,text)
+            searchFull(config.file2,text)
             .then(function(res){
                 result.vetext=res
                 return response.send(result)
@@ -75,7 +75,7 @@ app.get('/search', (request, response) => {
         })
     
     }else{
-        tail(filename)
+        tail(config.file1)
         .then(function(res){
             var result={}
             result.vistaapi=res
